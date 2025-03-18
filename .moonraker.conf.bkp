@@ -26,6 +26,11 @@ cors_domains =
 
 [history]
 
+[timelapse]
+output_path = ~/timelapse/
+frame_path = /tmp/timelapse/
+ffmpeg_binary_path = /usr/share/ffmpeg
+
 [update_manager]
 channel = dev
 refresh_interval = 168
@@ -60,4 +65,18 @@ managed_services = KlipperScreen
 origin = https://github.com/KlipperScreen/KlipperScreen.git
 path = /home/solapse/KlipperScreen
 type = git_repo
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/pkglist.sh
+
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
 
